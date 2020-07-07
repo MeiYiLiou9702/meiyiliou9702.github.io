@@ -1,0 +1,38 @@
+h1{
+    font-family: "source-han-sans-traditional",sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
+body{
+    font-family: "source-han-sans-traditional",sans-serif;
+    font-style: normal;
+    background-color: white;
+}
+input.bLarger{width: 20px; height: 20px;}
+
+.sildewindow{
+    float: right;
+    width: 25%;
+	height: 90%;
+    background-color: whitesmoke;
+}
+.content{
+    background-color: antiquewhite;
+}
+#Main{
+    height: auto;
+}
+
+#Footer {
+    position: relative;
+	margin-top:auto;
+}
+
+#map{
+    overflow: auto;
+    height: 90%;
+}
+
+#container{
+	position: relative;
+}

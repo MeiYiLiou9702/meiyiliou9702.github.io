@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>活動通地圖</title>
+        <!-- Other Resource-->
+        <!-- jQuery -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- jQuery UI -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+         <!--Use typekit to show 思源黑體 at web sites-->
+        <script src="https://use.typekit.net/bwx7phy.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+        <!--bootstrap.css-->
+        <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous'> 
+        <!--bootstrap js-->
+        <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy' crossorigin='anonymous'></script>
+        <!--icon fontawesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <!--Open Layer-->
+        <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
+        <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+        <!-- Proj4.js-->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.4.4/proj4.js'></script>
+        <!-- My CSS -->
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+<!--navbar-->
+       <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #387D9C; margin: auto; color:white;">
+        <div class="container-fluid" >
+        <div class="navbar-header">
+          <i class="fas fa-bullhorn fa-2x" > </i><a class="navbar-brand" href="./index.html"><h2>活動通地圖</h2></a></div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+       <div class="collapse navbar-collapse" id="myNavbar">
+       <ul class="navbar-nav" >
+       <li class="nav-item dropdown">
+       <a class="navbar-brand dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">活動類別</a>       
+        <div  class="dropdown-menu" aria-labelledby="navbarDropdown" >
+         <div id="activity_catagory">
+          </div>
+        </div>
+           </li>
+       <li class="nav-item">
+            <a id="info" class="navbar-brand" href="#layerlist" data-toggle="tab" style="margin-left:5px;">
+                <i class="fas fa-angle-double-right fa-lg"></i>
+                 選項
+             </a><!-- -->
+      </li>
+    </ul>
+       </div>
+        </nav>
+        <div id="container">        
+<!--Slide bar (fix is required) --> 
+           <div id="sidebar" style="display:none" class="sildewindow">
+           <button type="button" id="btn-hide" class="btn btn-default" style="display:inline;" ><i class="fa fa-chevron-right"></i></button><h2 style="display:inline;margin:auto;">  選項</h2>
+           <div id="accordion">
+                 <h3>詳細資訊</h3>
+                 <div id="infom">
+                 </div>
+                 <h3>圖層列表</h3>
+                 <div id="acc_layerlist">
+                     <p id="baselayerlist">基本底圖</p>
+                 </div>
+                 <h3>其他功能</h3>
+                 <div>
+                     <!--<li><a class="navbar-brand" href="#" tabindex="-1" aria-disabled="true" style="margin-left:5px;"><i class="fas fa-car fa-lg"> </i> 導航</a></li>-->
+                     <li><a class="navbar-brand" href="#" tabindex="-1" aria-disabled="true" style="margin-left:5px;"><i class="far fa-calendar fa-lg"> </i> 加入google 行事曆</a></li>
+                     <li><a class="navbar-brand" href="#" tabindex="-1" aria-disabled="true" style="margin-left:5px;"><i class="fas fa-shapes"></i> Draw</a></li>
+                              <hr/>
+                               <div id="draw_data">
+                               <button class='btn btn-info btn-draw' id='btn-line' drawType='Point'>Point</button><br/>
+                               <button class='btn btn-info btn-draw' id='btn-line' drawType='LineString'>LineString</button><br/>
+                               <button class='btn btn-info btn-draw' id='btn-line' drawType='Polygon'>Polygon</button><br/>
+                               <br />
+                               <button class='btn btn-warning' id='btn-edit'>Edit</button><br />
+                               <a href='javascript:void(0);' class='btn btn-info' id='btn-json'>Download GeoJSON</a>
+                               </div>
+                 </div>
+            </div>
+            </div>
+<!--main map-->
+            <div id="map"></div>
+<!--footer-->
+            <div class="card-footer text-muted" id="Footer" style="background-color:#255A69">
+                <footer class="blockquote-footer" style="color:white;text-align: right;">Developer: 台大地理系─林承恩、陳冠甫、劉玫宜　;　Data from : <cite title="Source Title"><a href="https://opendata.culture.tw/" target="_blank" title="行政院文化部開放資料" style="color:white;">行政院文化部開放資料</a></cite>、<cite title="Source Title">OSM</cite>、<cite title="Source Title">Google API</cite> ； Code Sources : <cite title="Source Title"><a href="https://getbootstrap.com/" target="_blank" title="Bootstrap" style="color:white;">Bootstrap CSS&JS</a></cite>、<cite title="Source Title"><a href="https://jquery.com/" target="_blank" title="jQuery" style="color:white;">jQuery</a></cite>　　Icons made by <a href="https://www.freepik.com/" title="Freepik"　style="color:white;">Freepik</a> from <a href="https://www.flaticon.com/"　title="Flaticon"　style="color:white;">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"　title="Creative Commons BY 3.0" target="_blank"　style="color:white;">CC 3.0 BY</a></footer>
+              </div><!-- -->
+              </div>
+<!-- Script -->
+    <script src="./js/map_m.js"></script>         <!-- include map.js here because it must appear after <div id="map"> -->
+    <script src="./js/main.js"></script>
+    <script src="./js/draw.js"></script>
+    </body>
+</html>

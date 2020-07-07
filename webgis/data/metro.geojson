@@ -1,0 +1,29 @@
+{
+"type": "FeatureCollection",
+"name": "metro",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "name": "A1(台北車站)", "lat": 25.048808, "lng": 121.514055, "stype": "地下車站" }, "geometry": { "type": "Point", "coordinates": [ 121.514055, 25.048808 ] } },
+{ "type": "Feature", "properties": { "id": 2, "name": "A2(三重站)", "lat": 25.054662, "lng": 121.482899, "stype": "高架車站" }, "geometry": { "type": "Point", "coordinates": [ 121.482899, 25.054662 ] } },
+{ "type": "Feature", "properties": { "id": 3, "name": "A3(新北產業園區站)", "lat": 25.061712, "lng": 121.45889, "stype": "高架車站" }, "geometry": { "type": "Point", "coordinates": [ 121.45889, 25.061712 ] } },
+{ "type": "Feature", "properties": { "id": 4, "name": "A4(新莊副都心站)", "lat": 25.059207, "lng": 121.445721, "stype": "高架車站" }, "geometry": { "type": "Point", "coordinates": [ 121.445721, 25.059207 ] } },
+{ "type": "Feature", "properties": { "id": 5, "name": "A5(泰山站)", "lat": 25.053206, "lng": 121.43947, "stype": "高架車站" }, "geometry": { "type": "Point", "coordinates": [ 121.43947, 25.053206 ] } },
+{ "type": "Feature", "properties": { "id": 6, "name": "A6(泰山貴和站)", "lat": 25.033189, "lng": 121.422686, "stype": "高架車站" }, "geometry": { "type": "Point", "coordinates": [ 121.422686, 25.033189 ] } },
+{ "type": "Feature", "properties": { "id": 7, "name": "A7(體育大學站)", "lat": 25.041837, "lng": 121.385466, "stype": "地下車站" }, "geometry": { "type": "Point", "coordinates": [ 121.385466, 25.041837 ] } },
+{ "type": "Feature", "properties": { "id": 8, "name": "A8(長庚醫院站)", "lat": 25.060472, "lng": 121.370829, "stype": "高架車站" }, "geometry": { "type": "Point", "coordinates": [ 121.370829, 25.060472 ] } },
+{ "type": "Feature", "properties": { "id": 9, "name": "A9(林口站)", "lat": 25.065795, "lng": 121.361308, "stype": "高架車站" }, "geometry": { "type": "Point", "coordinates": [ 121.361308, 25.065795 ] } },
+{ "type": "Feature", "properties": { "id": 10, "name": "A10(山鼻站)", "lat": 25.080827, "lng": 121.284789, "stype": "高架車站" }, "geometry": { "type": "Point", "coordinates": [ 121.284789, 25.080827 ] } },
+{ "type": "Feature", "properties": { "id": 11, "name": "A11(坑口站)", "lat": 25.086422, "lng": 121.266531, "stype": "高架車站" }, "geometry": { "type": "Point", "coordinates": [ 121.266531, 25.086422 ] } },
+{ "type": "Feature", "properties": { "id": 12, "name": "A12(機場第一航廈站)", "lat": 25.081838, "lng": 121.239749, "stype": "地下車站" }, "geometry": { "type": "Point", "coordinates": [ 121.239749, 25.081838 ] } },
+{ "type": "Feature", "properties": { "id": 13, "name": "A13(機場第二航廈站)", "lat": 25.076772, "lng": 121.231548, "stype": "地下車站" }, "geometry": { "type": "Point", "coordinates": [ 121.231548, 25.076772 ] } },
+{ "type": "Feature", "properties": { "id": 14, "name": "A14(機場第三航廈站)", "lat": 25.07298, "lng": 121.226678, "stype": "地下車站" }, "geometry": { "type": "Point", "coordinates": [ 121.226678, 25.07298 ] } },
+{ "type": "Feature", "properties": { "id": 15, "name": "A14a(機場旅館站)", "lat": 25.069641, "lng": 121.221078, "stype": "地下車站" }, "geometry": { "type": "Point", "coordinates": [ 121.221078, 25.069641 ] } },
+{ "type": "Feature", "properties": { "id": 16, "name": "A15(大園站)", "lat": 25.055994, "lng": 121.210512, "stype": "高架車站" }, "geometry": { "type": "Point", "coordinates": [ 121.210512, 25.055994 ] } },
+{ "type": "Feature", "properties": { "id": 17, "name": "A16(橫山站)", "lat": 25.036667, "lng": 121.215664, "stype": "高架車站" }, "geometry": { "type": "Point", "coordinates": [ 121.215664, 25.036667 ] } },
+{ "type": "Feature", "properties": { "id": 18, "name": "A17(領航站)", "lat": 25.024129, "lng": 121.221027, "stype": "高架車站" }, "geometry": { "type": "Point", "coordinates": [ 121.221027, 25.024129 ] } },
+{ "type": "Feature", "properties": { "id": 19, "name": "A18(高鐵桃園站)", "lat": 25.013794, "lng": 121.214223, "stype": "高架車站" }, "geometry": { "type": "Point", "coordinates": [ 121.214223, 25.013794 ] } },
+{ "type": "Feature", "properties": { "id": 20, "name": "A19(桃園體育園區站)", "lat": 25.001803, "lng": 121.203302, "stype": "高架車站" }, "geometry": { "type": "Point", "coordinates": [ 121.203302, 25.001803 ] } },
+{ "type": "Feature", "properties": { "id": 21, "name": "A20(興南站)", "lat": 24.980184, "lng": 121.216278, "stype": "高架車站" }, "geometry": { "type": "Point", "coordinates": [ 121.216278, 24.980184 ] } },
+{ "type": "Feature", "properties": { "id": 22, "name": "A21(環北站)", "lat": 24.967479, "lng": 121.220688, "stype": "地下車站" }, "geometry": { "type": "Point", "coordinates": [ 121.220688, 24.967479 ] } }
+]
+}
